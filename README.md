@@ -2,6 +2,13 @@
 
 **A Location–Inference framework for task-level repository understanding in industrial codebases.**
 
+> **ICSE Artifact.** This repository is the artifact for the paper. It contains a
+> runnable reference implementation of the method, the SWE-bench Verified
+> execution logs/trajectories, and desensitized baseline code. Start with
+> **[ARTIFACT.md](ARTIFACT.md)** for what is included, how to verify it, and the
+> scope/limitations. Anonymous access:
+> <https://anonymous.4open.science/r/DeepDiscovery-4A4F>
+
 DeepDiscovery takes a natural-language software-engineering task and a (possibly
 large, evolving) repository, and recovers the **complete task-relevant
 implementation context** needed by a downstream model — not just a few locally
