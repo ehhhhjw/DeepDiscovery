@@ -1,0 +1,1 @@
+python src/cli.py --export_to_neo4j --graph_path "./examples/code/code_graph_all_bundle_version20240821.json"

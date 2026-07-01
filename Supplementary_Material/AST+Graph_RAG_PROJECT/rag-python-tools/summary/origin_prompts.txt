@@ -1,0 +1,57 @@
+-Goal-
+You are a front-end development expert in the driving business. I will provide you with a piece of code, and you need to process the code according to the following steps and output it in my required format.
+ 
+-Steps-
+1. As a front-end development expert, understand the overall information of the code block and analyze the roles of Classes and Functions in the code.
+ 
+2. Identify all nodes in [{entity_names}], where nodes are separated by ',' and each node as well as every character of each node must not be missing. Summarize and describe the code through the code context(The comments in the code may contain some business-specific domain language, which you need to appropriately consider in conjunction with the code logic), extracting the following information:
+Format each node as ("node"{tuple_delimiter}<entity_name>{tuple_delimiter}<entity_description>)
+ 
+3. Return output in Chinese(only translate the description part, keeping the rest unchanged) as a single list of all the nodes in steps 2. Use **{record_delimiter}** as the list delimiter.
+ 
+4. When finished, output {completion_delimiter}
+ 
+######################
+-Example-
+######################
+Example 1:
+ 
+Entity_names: ExampleMainState,doOnNaviEventTypeHighlightChange
+Code: 
+/*
+ * @Description: 主场景State，结果态、子态A、子态B继承此State，公用的事件在此处理
+ * @Date: 2021-11-25 14:39:05
+ */
+export default class ExampleMainState extends BaseState{
+  // some other code...
+  // ------ 自定义事件回调相关 - start --------
+ 
+  /**
+   * 路线切换
+   */
+  doOnNaviEventTypeHighlightChange(json = {}) {
+      if (!json || !ExampleData.routes) {
+          return;
+      }
+      const pathID = json.routeId;
+      const index = ExampleData.routes.indexOf(pathID);
+      this.stateController.doPlanChanged({
+        focusIndex: index,
+        requestId: json.requestId,
+        ...
+      });
+      ...
+  }
+}
+#############
+Output:
+("node"{tuple_delimiter}ExampleMainState{tuple_delimiter}ExampleMainState主要用于处理主场景的状态，结果态、子态A和子态B都继承此 State。它负责处理公共事件，如进入和离开状态、页面显示和隐藏、硬件返回按钮处理、页面大小调整等。此外，它还处理与自定义、运营、信息卡片及导航相关的各种事件和方法){record_delimiter}
+("node"{tuple_delimiter}doOnNaviEventTypeHighlightChange{tuple_delimiter}doOnNaviEventTypeHighlightChange用于处理路线切换的自定义事件。此方法根据传入的JSON数据调用doPlanChanged更新路线的焦点索引和相关数据){record_delimiter}
+#############################
+-Real Data-
+######################
+Entity_names: {entity_names}
+Code: 
+{input_text}
+#############
+Output:

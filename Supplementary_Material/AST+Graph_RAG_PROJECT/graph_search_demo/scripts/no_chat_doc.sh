@@ -1,0 +1,8 @@
+python src/cli.py \
+  --is_use_docs \
+  --docs_graph_path "./examples/ajx_doc/ajx_graph_result_20240925.json" \
+  --docs_community_path "./examples/ajx_doc/community_reports_result_20240925.json" \
+  --db_path "./chroma_db/chroma_db_all_bundle_version20240925" \
+  --top_k 60 \
+  --open_rerank \
+  --open_query_split \

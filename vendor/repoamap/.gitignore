@@ -1,0 +1,47 @@
+# Dependency directories
+node_modules/
+
+# Build output
+lib/
+website/client/.vitepress/dist/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+
+# Editor directories and files
+.vscode/
+.idea/
+
+# Test coverage
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
+
+# repoamap output
+repoamap-output.txt
+repoamap-output.xml
+repoamap-output.md
+
+# ESLint cache
+.eslintcache
+
+# yarn
+.yarn/
+
+# biome
+.biome/
+
+# aider
+.aider*
+
+# private files
+.cursor/rules/
+.github/todo.md
+.mcp.json
+.private/
+.agents/local/

@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "graph-search-demo"
+version = "0.1.0"
+description = ""
+authors = ["Anonymous <anonymous@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+langchain-chroma = "0.1.2"
+langchain-core = "0.2.30"
+langchain-openai = "0.1.19"
+neo4j = "5.22.0"
+networkx = "3.3"
+tenacity = "8.5.0"
+tiktoken = "0.7.0"
+tqdm = "4.66.4"
+graspologic = "3.4.1"
+pandas = "2.2.2"
+openpyxl = "3.1.5"
+pathlib = "1.0.1"
+configparser = "7.0.0"
+flask = "3.0.3"
+gunicorn = "23.0.0"
+langchain = "^0.2.13"
+langchain-community = "^0.2.12"
+rank-bm25 = "^0.2.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

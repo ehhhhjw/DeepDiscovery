@@ -1,0 +1,39 @@
+# 请为以下的业务代码编写注释，以反映代码的整体信息、每个函数/类/引入依赖库函数的功能和用途，要求：
+## 1. 对代码进行整体理解，将注释加到代码头部，内容包括这段代码的整体用途并推测它在整个项目中的角色，例如：
+```
+/**
+ * @class MyClass
+ * @description 这个类继承自...，并实现了...功能，提供了...用法，在整个项目中可能负责...
+ */
+ class MyClass {
+    ......
+ }
+```
+## 2. 对代码中声明、实现的函数进行注释，内容包括函数的功能和用途，并尽量推测它在整个代码片段以及整个项目中的角色，例如：
+```
+/**
+* @function doSomething
+* @description 这个方法执行了特定的任务，例如...，并实现了...，可用于...
+* @returns {boolean} - 返回值的含义
+*/
+doSomething() {
+// 方法实现
+}
+```
+## 3. 对引入依赖库函数的功能和用途进行注释，根据代码中的使用进行推断，例如：
+```
+/**
+ * @dep: LibraryX是一个处理网络请求和数据转换的库
+ * @depMethod: fetchData 用于从指定的URL获取数据，processData 用于处理返回的数据
+ */
+import { fetchData, processData } from 'LibraryX';
+...
+const response = fetchData('https://api.example.com/data');
+const formattedData = processData(response.data);
+...
+```
+
+## 请注意：
+* 直接将所有注释添加到输入的代码片段中！直接将所有注释添加到输入的代码片段中！
+* 确保对import的依赖库代码也加上注释！确保对import的依赖库代码也加上注释！加在代码头部！加在代码头部！
+* 一定不要省略或者删除任何代码片段！一定不要省略或者删除任何代码片段！

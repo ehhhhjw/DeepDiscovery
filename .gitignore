@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.log
+.env
+.env.local
+.DS_Store
+coverage/
+.deepdiscovery-cache/
+
+# Vendored repoamap engine build artifacts (source is committed; these are generated)
+vendor/repoamap/node_modules/
+vendor/repoamap/lib/

@@ -1,0 +1,51 @@
+services:
+  chat_worker: # 问答service
+    image: graph-search-demo:2.0.0
+    restart: always
+    environment:
+      PYTHONPATH: src
+      thread_workers: 12
+      http_feedback_log_url: 'https://your-llm-cache-proxy.example.com/graph-search/log/upload'
+      http_rag_search_url: 'http://search_worker:5013/v1/local/query'
+      http_rag_active_url: 'http://search_worker:5013/v1/local/query-active'
+    volumes:
+      # Mount the storage directory to the container, for storing user files.
+      - ./src:/app/api/src
+      - ./data:/app/api/data
+      - ./scripts:/app/api/scripts
+      - ./examples:/app/api/examples
+      - ./log:/app/api/log
+      - ./chroma_db:/app/api/chroma_db
+    ports:
+      - "5004:5001"
+    networks:
+      - graph_search_proxy_network
+      - default
+    depends_on:
+      - search_worker # 确保 worker 先启动
+  search_worker: # 向量匹配service
+    image: graph-search-demo:2.0.0
+    # restart: always
+    environment:
+      PYTHONPATH: src
+      thread_workers: 8
+      http_port: 5013
+      http_feedback_log_url: 'http://your-llm-cache-proxy.example.test/graph-search/log/upload'
+      http_rag_search_url: 'http://search_worker:5013/v1/local/query'
+    volumes:
+      # Mount the storage directory to the container, for storing user files.
+      - ./src:/app/api/src
+      - ./data:/app/api/data
+      - ./scripts:/app/api/scripts
+      - ./examples:/app/api/examples
+      - ./log:/app/api/log
+      - ./chroma_db:/app/api/chroma_db
+    # ports:
+    #   - "5013:5013"
+    networks:
+      - graph_search_proxy_network
+      - default
+networks:
+  graph_search_proxy_network:
+    driver: bridge
+    internal: true

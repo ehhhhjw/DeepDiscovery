@@ -1,0 +1,145 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Create KG",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/cli.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--create_kg",
+        "--ast_data_path",
+        "./examples/code/ast_result_all_bundle_version20240821.json",
+        "--graph_save_path",
+        "./examples/code/code_graph_all_bundle_version20240821.json",
+        "--community_map_save_path",
+        "./examples/code/community_all_bundle_version20240821.json",
+        "--community_reports_save_path",
+        "./examples/code/community_reports_all_bundle_version20240821.json",
+        "--max_cluster_size",
+        "50",
+        "--concurrent_num",
+        "5"
+      ]
+    },
+    {
+      "name": "Embedding",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/cli.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--index",
+        "--graph_path",
+        "./examples/code/code_graph_target_bundle_release_1501.json",
+        "--docs_graph_path",
+        "./examples/ajx_doc/ajx_graph_result_20240925.json",
+        "--db_path",
+        "./chroma_db/chroma_db"
+      ]
+    },
+    {
+      "name": "Chat_docs",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/cli.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--docs_graph_path",
+        "./examples/ajx_doc/ajx_graph_result_20240817.json",
+        "--docs_community_path",
+        "./examples/ajx_doc/community_reports_result_20240817.json",
+        "--graph_path",
+        "./examples/code/code_graph_all_bundle_version20240821.json",
+        "--db_path",
+        "./chroma_db_all_bundle_version20240821",
+        "--community_path",
+        "./examples/code/community_reports_all_bundle_version20240821.json",
+        "--top_k",
+        "15",
+        "--open_rerank",
+        "--open_query_split"
+      ]
+    },
+    {
+      "name": "Chat",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/cli.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--chat",
+        "--is_use_code",
+        "--docs_graph_path",
+        "./examples/ajx_doc/ajx_graph_result_20240830.json",
+        "--docs_community_path",
+        "./examples/ajx_doc/community_reports_result_20240830.json",
+        "--graph_path",
+        "./examples/code/code_graph_all_bundle_version20240830.json",
+        "--db_path",
+        "./chroma_db/chroma_db_all_bundle_version20240830",
+        "--community_path",
+        "./examples/code/community_reports_all_bundle_version20240830.json",
+        "--top_k",
+        "60",
+        "--open_rerank",
+        "--open_query_split"
+      ]
+    },
+    {
+      "name": "Chat_commit",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/cli.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--chat",
+        "--is_use_code",
+        "--is_use_tech_doc",
+        "--graph_path",
+        "./examples/code/code_graph_all_bundle_version20240821.json",
+        "--community_path",
+        "./examples/code/community_reports_all_bundle_version20240821.json",
+        "--db_path",
+        "./chroma_db_all_bundle_version20240821",
+        "--top_k",
+        "36",
+        "--open_rerank",
+        "--open_query_split"
+      ]
+    },
+    {
+      "name": "Get Global Report",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/cli.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--get_global_report",
+        "--graph_path",
+        "./examples/code/code_graph_all_bundle_version20240821.json",
+        "--community_reports_save_path",
+        "./examples/code/global_community_reports_version20240821.json",
+        "--concurrent_num",
+        "5"
+      ]
+    },
+    {
+      "name": "Score_chat",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/score/main.py",
+      "console": "integratedTerminal",
+      "args": ["--script_type", "chat"]
+    },
+    {
+      "name": "Score_score",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/score/main.py",
+      "console": "integratedTerminal",
+      "args": ["--script_type", "score"]
+    }
+  ]
+}
