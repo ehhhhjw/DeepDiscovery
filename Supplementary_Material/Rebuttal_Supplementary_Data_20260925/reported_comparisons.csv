@@ -1,0 +1,15 @@
+method,metric,unit,value,lower,upper,approximate,source_section,source_lines,notes
+RAG,FRR,percent,84.4,,,no,Reviewer-C-Q2; Reviewer-C-W3,63; 143,Reported aggregate; matches the Data two mean FRR rounded to one decimal
+DeepDiscovery,FRR,percent,92.6,,,no,Reviewer-C-Q2; Reviewer-C-W3,63; 143,Reported aggregate
+RAG,MR,percent,,85.8,91.8,no,Reviewer-C-Q2,63,Endpoints retained; interval type is not specified
+DeepDiscovery,MR,percent,,90.4,96.3,no,Reviewer-C-Q2,63,Endpoints retained; interval type is not specified
+RAG,average_execution_time,seconds,57.2,,,no,Reviewer-C-Q2; Reviewer-C-W3,63; 143,Reported average
+AST+GraphRAG,average_execution_time,seconds,44.8,,,no,Reviewer-A-W3,91,Reported average
+DeepDiscovery,average_execution_time,seconds,13.2,,,no,Reviewer-C-Q2; Reviewer-A-W3; Reviewer-C-W3,63; 91; 143,Reported average
+RAG,execution_tokens,tokens,24991,,,no,Reviewer-C-Q2; Reviewer-C-W3,63; 143,Reported aggregate token usage
+AST+GraphRAG,execution_tokens,tokens,29677,,,no,Reviewer-A-W3,91,Reported aggregate token usage
+DeepDiscovery,execution_tokens,tokens,8826,,,no,Reviewer-C-Q2; Reviewer-A-W3; Reviewer-C-W3,63; 91; 143,Reported value; Data three mean input plus output is 8826.111111 tokens
+RAG,offline_preprocessing_time,hours,7.0,,,yes,Reviewer-C-Q2,63,Source says about 7.0 hours
+RAG,offline_preprocessing_tokens,tokens,2260000000,,,yes,Reviewer-C-Q2,63,Source expresses this approximately as 2.26B
+DeepDiscovery,offline_preprocessing_time,hours,,,,not_applicable,Reviewer-C-Q2,63,Source says such offline preprocessing is not required; no measured numeric zero is supplied
+DeepDiscovery,offline_preprocessing_tokens,tokens,,,,not_applicable,Reviewer-C-Q2,63,Source says such offline preprocessing is not required; no measured numeric zero is supplied

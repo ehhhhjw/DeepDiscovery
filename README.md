@@ -170,7 +170,7 @@ The `Supplementary_Material/` folder is an **anonymized artifact package** that
 supports the verifiability of the main claims in the paper. All materials have
 been anonymized and do not reveal the authors' identities or organization.
 
-It contains two folders, plus supporting result/configuration files:
+It contains three folders, with supporting result/configuration files:
 
 ```
 Supplementary_Material/
@@ -180,11 +180,12 @@ Supplementary_Material/
 │   ├── acoder_logs/                 # per-instance run logs (500 dirs: eval.sh, patch.diff,
 │   │                                #   report.json, run_instance.log, test_output.txt)
 │   └── acoder_trajs/                # per-instance execution trajectories (500 .md files)
-└── AST+Graph_RAG_PROJECT/           # desensitized code for the RAG / GraphRAG / AST+GraphRAG baselines
-    ├── AST_Tree_Graph/              # AST parsing → entity/relation extraction → code graph
-    ├── rag-python-tools/            # AST / commit / summary data-processing toolset
-    ├── graph_search_demo/           # Graph-search retrieval + QA service (Neo4j + vector store)
-    └── README.md                    # baseline project documentation and data flow
+├── AST+Graph_RAG_PROJECT/           # desensitized code for the RAG / GraphRAG / AST+GraphRAG baselines
+│   ├── AST_Tree_Graph/              # AST parsing → entity/relation extraction → code graph
+│   ├── rag-python-tools/            # AST / commit / summary data-processing toolset
+│   ├── graph_search_demo/           # Graph-search retrieval + QA service (Neo4j + vector store)
+│   └── README.md                    # baseline project documentation and data flow
+└── Rebuttal_Supplementary_Data_20260925/  # rebuttal data tables, CSVs, and statistical notes
 ```
 
 ### `SWE-Bench-Verified_logs_trajs/`
@@ -226,6 +227,15 @@ full data flow and per-subproject details.
 These materials support inspection of the public end-to-end evaluation on
 SWE-bench Verified and **partial** verification of the controlled method-level
 comparison.
+
+### `Rebuttal_Supplementary_Data_20260925/`
+
+[Supplementary data from the 2026-09-25 rebuttal](Supplementary_Material/Rebuttal_Supplementary_Data_20260925/README.md):
+the SWE-bench paired contingency table, three-run FRR scores for seven methods,
+file/token statistics for 67 industrial benchmark tasks, and reported baseline
+comparisons. The package includes readable tables, CSV files, provenance, and
+statistical notes that distinguish reported values from derived checks and flag
+inconsistencies in the source. The budget example is labeled as illustrative.
 
 ### Scope and reproducibility statement
 

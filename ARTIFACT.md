@@ -13,8 +13,9 @@ download the repository.
 
 ## 1. What the artifact contains
 
-The artifact has **three** parts: a runnable reference implementation of the
-method, plus the two supplementary evidence folders described in the paper.
+The artifact has **four** parts: a runnable reference implementation of the
+method, two supplementary evidence folders described in the paper, and a
+supplement organizing the numerical evidence from the 2026-09-25 rebuttal.
 
 ### (A) Runnable DeepDiscovery reference implementation — `src/`, `vendor/`, `tests/`
 A self-contained TypeScript implementation of the paper's two-stage
@@ -53,6 +54,16 @@ baselines **RAG**, **GraphRAG**, and **AST+GraphRAG** (paper RQ1), with three
 subprojects (`AST_Tree_Graph/`, `rag-python-tools/`, `graph_search_demo/`) and
 its own `README.md`. Sample data, keys, internal domains, and business
 identifiers are replaced with placeholders.
+
+### (D) `Supplementary_Material/Rebuttal_Supplementary_Data_20260925/` — rebuttal data
+
+[Tables, CSV files, and statistical notes](Supplementary_Material/Rebuttal_Supplementary_Data_20260925/README.md)
+organized from the 2026-09-25 rebuttal: a paired SWE-bench contingency table,
+21 method/run FRR records, 27 medium-scale and 40 large-scale task-statistic
+records, and reported baseline comparisons. Source values are retained alongside
+clearly labeled derived checks and unresolved statistical discrepancies. The
+package also records annotation context and a separate illustrative budget
+example; it does not add industrial source code or per-task/run retrieval outputs.
 
 ---
 
@@ -104,6 +115,15 @@ predicted patches in `acoder_diff.jsonl`.
 See `Supplementary_Material/AST+Graph_RAG_PROJECT/README.md` for the data flow and
 per-subproject setup of the RAG / GraphRAG / AST+GraphRAG baselines.
 
+### (D) Inspect the rebuttal data
+
+Start with the supplement's [README](Supplementary_Material/Rebuttal_Supplementary_Data_20260925/README.md)
+for source provenance and CSV definitions, then use its
+[statistical notes](Supplementary_Material/Rebuttal_Supplementary_Data_20260925/STATISTICAL_NOTES.md)
+for arithmetic checks and the distinction between run-level and task-level
+evidence. Reproducing the industrial experiments still requires data absent
+from this artifact.
+
 ---
 
 ## 3. Mapping to paper claims
@@ -113,6 +133,7 @@ per-subproject setup of the RAG / GraphRAG / AST+GraphRAG baselines.
 | Method design (Location–Inference, Algorithm 1) | Part (A): `src/` + `vendor/` + `tests/` |
 | RQ3 — end-to-end Solve Rate on SWE-bench Verified (78.6%) | Part (B): logs/trajectories + `ACoder.20250901_final.json` |
 | RQ1 — controlled method-level comparison (RAG / GraphRAG / AST+GraphRAG) | Part (C): desensitized baseline code |
+| Rebuttal numerical evidence: paired outcomes, FRR runs, task/file/token statistics | Part (D): source tables, CSVs, and statistical consistency notes |
 
 ---
 
